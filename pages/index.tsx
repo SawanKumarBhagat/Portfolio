@@ -15,7 +15,7 @@ import { fetchExperiences } from "@/utils/fetchExperiences";
 import { fetchSkills } from "@/utils/fetchSkills";
 import { fetchSocials } from "@/utils/fetchSocials";
 import { fetchProjects } from "@/utils/fetchProjects";
-import { urlFor } from "@/sanity";
+import { urlFor } from "@/lib/sanity";
 
 type Props = {
   pageInfo: PageInfo;

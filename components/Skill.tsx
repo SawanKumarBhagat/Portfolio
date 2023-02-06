@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Skill } from "@/typings";
-import { urlFor } from "@/sanity";
+import { urlFor } from "@/lib/sanity";
 
 type Props = {
   directionLeft?: boolean;

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import { urlFor } from "@/sanity";
+import { urlFor } from "@/lib/sanity";
 import { Project } from "@/typings";
 
 type Props = {
