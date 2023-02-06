@@ -2,13 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { PageInfo } from "@/typings";
-import { urlFor } from "@/lib/sanity";
+import { urlFor } from "@/sanity";
 
 type Props = {
   pageInfo: PageInfo;
 };
 
-function About({pageInfo}: Props) {
+function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -31,7 +31,7 @@ function About({pageInfo}: Props) {
           alt=""
           unoptimized={true}
           fill
-          style={{objectFit:"cover"}}
+          style={{ objectFit: "cover" }}
           className="rounded-full md:rounded-lg"
         />
       </motion.div>
@@ -43,9 +43,7 @@ function About({pageInfo}: Props) {
           background
         </h4>
         <div className="text-sm sm:text-base space-y-2">
-          <p>
-            {pageInfo?.backgroundInformation}
-          </p>
+          <p>{pageInfo?.backgroundInformation}</p>
         </div>
       </div>
     </motion.div>

@@ -4,7 +4,7 @@ import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
 import Link from "next/link";
 import { PageInfo } from "@/typings";
-import { urlFor } from "@/lib/sanity";
+import { urlFor } from "@/sanity";
 
 type Props = {
   pageInfo: PageInfo;
@@ -29,7 +29,7 @@ function Hero({ pageInfo }: Props) {
           alt=""
           unoptimized={true}
           fill
-          style={{objectFit:"contain"}}
+          style={{ objectFit: "contain" }}
           className="rounded-full"
         />
       </div>

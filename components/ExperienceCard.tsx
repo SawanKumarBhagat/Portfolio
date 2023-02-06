@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Experience } from "@/typings";
-import { urlFor } from "@/lib/sanity";
+import { urlFor } from "@/sanity";
 
 type Props = {
   experience: Experience;
