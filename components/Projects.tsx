@@ -3,12 +3,33 @@ import React from "react";
 import { motion } from "framer-motion";
 import { urlFor } from "@/lib/sanity";
 import { Project } from "@/typings";
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
 type Props = {
   projects: Project[];
 };
 
 function Projects({ projects }: Props) {
+  function onClickLeft() {
+    const element = document.getElementById('cont');
+    if (element !== null) {
+      element.scrollBy({
+        left: -element.offsetWidth * 1,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  function onClickRight() {
+    const element = document.getElementById('cont');
+    if (element !== null) {
+      element.scrollBy({
+        left: element.offsetWidth * 1,
+        behavior: 'smooth'
+      });
+    }
+  }
+  
   return (
     <motion.div
       initial={{ opacity: 1 }}
@@ -19,12 +40,14 @@ function Projects({ projects }: Props) {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         Projects
       </h3>
-
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#2878B8]/80 z-2">
+      <button className="top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 text-white/40 cursor-pointer hover:text-white min-w-10 min-h-10 z-10" onClick={onClickLeft}>
+        <BsChevronCompactLeft />
+      </button>
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#2878B8]/80 z-2" id="cont">
         {projects?.map((project, i) => (
           <div
             key={project?._id}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 md:p-44 h-screen "
+            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 md:p-44 h-screen"
           >
             <motion.div
               initial={{ y: -100, opacity: 0 }}
@@ -76,6 +99,10 @@ function Projects({ projects }: Props) {
           </div>
         ))}
       </div>
+      
+      <button className="top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 text-white/40 cursor-pointer hover:text-white  min-w-10 min-h-10 z-10" onClick={onClickRight}>
+        <BsChevronCompactRight />
+      </button>
       <div className="w-full absolute top-[30%] bg-[#2878B8]/10 left-0 h-[450px] -skew-y-12" />
       {/* // for the background diagonal wallpaper */}
     </motion.div>

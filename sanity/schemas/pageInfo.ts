@@ -57,5 +57,10 @@ export default defineType({
       type: "array",
       of: [{ type: "reference", to: { type: "social" } }],
     }),
+    defineField({
+      name: "resume",
+      title: "Resume",
+      type: "url",
+    }),
   ],
 })
