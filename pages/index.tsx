@@ -92,6 +92,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       socials,
     },
     revalidate: 10, // to refresh the data in every 10 seconds
-
   };
 };
